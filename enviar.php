@@ -13,14 +13,13 @@
         <?php
             $conexion =  mysqli_connect(SERVIDOR,  USUARIO,  CONTRASENA, BASEDATOS);
         
-            $consulta = 'insert into empleados dni, nombre, correo, telefono
-            value('.$_POST['dni'].','.$_POST['nombre'].','.$_POST['correo'].','.$_POST['telefono'].');';
+            $consulta = 'insert into empleados (dni, nombre, correo, telefono)
+            value(\''.$_POST['dni'].'\',\''.$_POST['nombre'].'\',\''.$_POST['correo'].'\',\''.$_POST['telefono'].'\');';
 
             echo $consulta;
-            
+
             $resultado = mysqli_query($conexion, $consulta);
 
-            echo $consulta;
             echo '<h1>Información actualizada</h1>'
         ?>
         <a href="index.php">Volver</a>
