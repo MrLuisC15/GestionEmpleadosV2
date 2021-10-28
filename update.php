@@ -14,9 +14,10 @@
          $conexion =  mysqli_connect(SERVIDOR,  USUARIO,  CONTRASENA, BASEDATOS);
        
         
-         $resultado = mysqli_query($conexion, 'update empleados set dni='.$_POST['dni'].', nombre='.$_POST['nombre'].'
-         , correo='.$_POST['correo'].', telefono='.$_POST['telefono'].' 
-         where IdEmpleado=\''.$_POST['id'].'\';');
+         $resultado = mysqli_query($conexion, 'update empleados 
+         set dni=\''.$_POST['dni'].'\', nombre=\''.$_POST['nombre'].'\'
+         , correo=\''.$_POST['correo'].'\', telefono=\''.$_POST['telefono'].'\' 
+         where IdEmpleado='.$_POST['id'].';');
 
         echo '<h1>Información actualizada</h1>';
 
